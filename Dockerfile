@@ -21,6 +21,8 @@ RUN apt-get update && apt-get install -y \
     unzip \
     python3-pip \
     ros-foxy-xacro \
+    x11-apps\
+    python3-tk\
     && apt-get clean
 
 # git-lfs初期化
@@ -75,3 +77,6 @@ RUN source /opt/ros/foxy/setup.bash && \
 # ========================================
 RUN echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc && \
     echo "source /workspace/ros2_ws/install/setup.bash" >> ~/.bashrc
+
+COPY GUI.py /workspace/ros2_ws/src/crane_x7_description/
+
