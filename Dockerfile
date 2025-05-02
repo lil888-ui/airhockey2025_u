@@ -16,7 +16,7 @@ RUN apt-get update && apt-get install -y \
     python3 python3-dev python3-venv python3-pip \
     libgl1-mesa-glx libegl1 libglfw3 libglew-dev libosmesa6-dev \
     libxrandr2 libxinerama1 libxcursor1 libxi6 \
-    ffmpeg git git-lfs nano unzip wget \
+    x11-apps mesa-utils ffmpeg git git-lfs nano unzip wget \
     locales \
     && rm -rf /var/lib/apt/lists/*
 
