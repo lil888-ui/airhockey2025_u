@@ -8,3 +8,18 @@
 
 ## rdp-ssh
     rdp-ssh -n my-gpu-desktop -a robot_dev2 start
+
+# ホッケー台
+
+    cd /workspace/ros2_ws/src
+    git clone https://github.com/AirHockeyChallenge/air_hockey_challenge.git
+    cd air_hockey_challenge
+    git checkout tournament
+    apt-get update
+    apt-get install -y git-lfs
+    git lfs install
+    git lfs pull
+    ls air_hockey_challenge/environments/data/iiwas/assets/
+    export MUJOCO_GL=glfw
+
+その後`hockey_test.py`を実行
