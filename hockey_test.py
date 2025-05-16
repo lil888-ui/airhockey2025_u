@@ -6,7 +6,7 @@ import random
 import math
 
 # === XMLファイルのパス調整 ===
-os.chdir("air_hockey_challenge/environments/data")
+os.chdir("/workspace/ros2_ws/src/air_hockey_challenge/air_hockey_challenge/environments/data")
 
 # === table.xml の STLパスを書き換えて保存 ===
 with open("table.xml", "r") as f:
@@ -34,7 +34,7 @@ with mujoco.viewer.launch_passive(model, data) as viewer:
         mujoco.mj_resetData(model, data)
 
         print("⏳ 5秒待機中...")
-        time.sleep(5)
+        time.sleep(0.1)
 
         # ✅ ランダムな出現位置と方向
         x0 = random.uniform(*x_range)

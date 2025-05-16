@@ -1,0 +1,132 @@
+[0.000000] (-) TimerEvent: {}
+[0.000493] (crane_x7_description) JobQueued: {'identifier': 'crane_x7_description', 'dependencies': OrderedDict()}
+[0.000528] (crane_x7_description) JobStarted: {'identifier': 'crane_x7_description'}
+[0.010818] (crane_x7_description) JobProgress: {'identifier': 'crane_x7_description', 'progress': 'cmake'}
+[0.011410] (crane_x7_description) Command: {'cmd': ['/usr/bin/cmake', '/workspace/ros2_ws/src/crane_x7_description', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/install/crane_x7_description'], 'cwd': '/workspace/ros2_ws/build/crane_x7_description', 'env': OrderedDict([('NV_CUDA_COMPAT_PACKAGE', 'cuda-compat-12-4'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('CUDA_VERSION', '12.4.1'), ('ROS_DISTRO', 'foxy'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=12.4 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471 brand=tesla,driver>=525,driver<526 brand=unknown,driver>=525,driver<526 brand=nvidia,driver>=525,driver<526 brand=nvidiartx,driver>=525,driver<526 brand=geforce,driver>=525,driver<526 brand=geforcertx,driver>=525,driver<526 brand=quadro,driver>=525,driver<526 brand=quadrortx,driver>=525,driver<526 brand=titan,driver>=525,driver<526 brand=titanrtx,driver>=525,driver<526 brand=tesla,driver>=535,driver<536 brand=unknown,driver>=535,driver<536 brand=nvidia,driver>=535,driver<536 brand=nvidiartx,driver>=535,driver<536 brand=geforce,driver>=535,driver<536 brand=geforcertx,driver>=535,driver<536 brand=quadro,driver>=535,driver<536 brand=quadrortx,driver>=535,driver<536 brand=titan,driver>=535,driver<536 brand=titanrtx,driver>=535,driver<536'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'compute,utility'), ('NV_CUDA_CUDART_VERSION', '12.4.127-1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('NVARCH', 'x86_64'), ('MUJOCO_GL', 'egl'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/workspace/ros2_ws/build/crane_x7_description'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[0.099752] (-) TimerEvent: {}
+[0.106347] (crane_x7_description) StdoutLine: {'line': b'-- The C compiler identification is GNU 9.4.0\n'}
+[0.164154] (crane_x7_description) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 9.4.0\n'}
+[0.168822] (crane_x7_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc\n'}
+[0.199813] (-) TimerEvent: {}
+[0.249713] (crane_x7_description) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc -- works\n'}
+[0.250531] (crane_x7_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.299925] (-) TimerEvent: {}
+[0.329122] (crane_x7_description) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.340442] (crane_x7_description) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.340831] (crane_x7_description) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.343531] (crane_x7_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++\n'}
+[0.400031] (-) TimerEvent: {}
+[0.437034] (crane_x7_description) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ -- works\n'}
+[0.437926] (crane_x7_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.500140] (-) TimerEvent: {}
+[0.529162] (crane_x7_description) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.541061] (crane_x7_description) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.541561] (crane_x7_description) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.544715] (crane_x7_description) StdoutLine: {'line': b'-- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)\n'}
+[0.569373] (crane_x7_description) StdoutLine: {'line': b'-- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") \n'}
+[0.569451] (crane_x7_description) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[0.600228] (-) TimerEvent: {}
+[0.700337] (-) TimerEvent: {}
+[0.729478] (crane_x7_description) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.786477] (crane_x7_description) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)\n'}
+[0.800402] (-) TimerEvent: {}
+[0.900517] (-) TimerEvent: {}
+[1.000640] (-) TimerEvent: {}
+[1.100769] (-) TimerEvent: {}
+[1.200904] (-) TimerEvent: {}
+[1.301009] (-) TimerEvent: {}
+[1.360466] (crane_x7_description) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[1.363503] (crane_x7_description) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[1.365292] (crane_x7_description) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the style conventions in PEP 257\n"}
+[1.378547] (crane_x7_description) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[1.382060] (crane_x7_description) StdoutLine: {'line': b'-- Configuring done\n'}
+[1.384775] (crane_x7_description) StdoutLine: {'line': b'-- Generating done\n'}
+[1.386691] (crane_x7_description) StdoutLine: {'line': b'-- Build files have been written to: /workspace/ros2_ws/build/crane_x7_description\n'}
+[1.391937] (crane_x7_description) CommandEnded: {'returncode': 0}
+[1.392478] (crane_x7_description) JobProgress: {'identifier': 'crane_x7_description', 'progress': 'build'}
+[1.394938] (crane_x7_description) Command: {'cmd': ['/usr/bin/cmake', '--build', '/workspace/ros2_ws/build/crane_x7_description', '--', '-j64', '-l64'], 'cwd': '/workspace/ros2_ws/build/crane_x7_description', 'env': OrderedDict([('NV_CUDA_COMPAT_PACKAGE', 'cuda-compat-12-4'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('CUDA_VERSION', '12.4.1'), ('ROS_DISTRO', 'foxy'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=12.4 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471 brand=tesla,driver>=525,driver<526 brand=unknown,driver>=525,driver<526 brand=nvidia,driver>=525,driver<526 brand=nvidiartx,driver>=525,driver<526 brand=geforce,driver>=525,driver<526 brand=geforcertx,driver>=525,driver<526 brand=quadro,driver>=525,driver<526 brand=quadrortx,driver>=525,driver<526 brand=titan,driver>=525,driver<526 brand=titanrtx,driver>=525,driver<526 brand=tesla,driver>=535,driver<536 brand=unknown,driver>=535,driver<536 brand=nvidia,driver>=535,driver<536 brand=nvidiartx,driver>=535,driver<536 brand=geforce,driver>=535,driver<536 brand=geforcertx,driver>=535,driver<536 brand=quadro,driver>=535,driver<536 brand=quadrortx,driver>=535,driver<536 brand=titan,driver>=535,driver<536 brand=titanrtx,driver>=535,driver<536'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'compute,utility'), ('NV_CUDA_CUDART_VERSION', '12.4.127-1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('NVARCH', 'x86_64'), ('MUJOCO_GL', 'egl'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/workspace/ros2_ws/build/crane_x7_description'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[1.401119] (-) TimerEvent: {}
+[1.445113] (crane_x7_description) CommandEnded: {'returncode': 0}
+[1.447298] (crane_x7_description) JobProgress: {'identifier': 'crane_x7_description', 'progress': 'install'}
+[1.459934] (crane_x7_description) Command: {'cmd': ['/usr/bin/cmake', '--install', '/workspace/ros2_ws/build/crane_x7_description'], 'cwd': '/workspace/ros2_ws/build/crane_x7_description', 'env': OrderedDict([('NV_CUDA_COMPAT_PACKAGE', 'cuda-compat-12-4'), ('SHLVL', '0'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/x86_64-linux-gnu:/opt/ros/foxy/lib:/usr/local/nvidia/lib:/usr/local/nvidia/lib64'), ('HOME', '/root'), ('OLDPWD', '/workspace'), ('ROS_PYTHON_VERSION', '3'), ('LC_CTYPE', 'C.UTF-8'), ('CUDA_VERSION', '12.4.1'), ('ROS_DISTRO', 'foxy'), ('NVIDIA_REQUIRE_CUDA', 'cuda>=12.4 brand=tesla,driver>=470,driver<471 brand=unknown,driver>=470,driver<471 brand=nvidia,driver>=470,driver<471 brand=nvidiartx,driver>=470,driver<471 brand=geforce,driver>=470,driver<471 brand=geforcertx,driver>=470,driver<471 brand=quadro,driver>=470,driver<471 brand=quadrortx,driver>=470,driver<471 brand=titan,driver>=470,driver<471 brand=titanrtx,driver>=470,driver<471 brand=tesla,driver>=525,driver<526 brand=unknown,driver>=525,driver<526 brand=nvidia,driver>=525,driver<526 brand=nvidiartx,driver>=525,driver<526 brand=geforce,driver>=525,driver<526 brand=geforcertx,driver>=525,driver<526 brand=quadro,driver>=525,driver<526 brand=quadrortx,driver>=525,driver<526 brand=titan,driver>=525,driver<526 brand=titanrtx,driver>=525,driver<526 brand=tesla,driver>=535,driver<536 brand=unknown,driver>=535,driver<536 brand=nvidia,driver>=535,driver<536 brand=nvidiartx,driver>=535,driver<536 brand=geforce,driver>=535,driver<536 brand=geforcertx,driver>=535,driver<536 brand=quadro,driver>=535,driver<536 brand=quadrortx,driver>=535,driver<536 brand=titan,driver>=535,driver<536 brand=titanrtx,driver>=535,driver<536'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'compute,utility'), ('NV_CUDA_CUDART_VERSION', '12.4.127-1'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/foxy/bin:/usr/local/nvidia/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('NVARCH', 'x86_64'), ('MUJOCO_GL', 'egl'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('PWD', '/workspace/ros2_ws/build/crane_x7_description'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[1.470284] (crane_x7_description) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[1.470621] (crane_x7_description) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[1.471205] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//config/dummy_controllers.yaml\n'}
+[1.482745] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//launch/display.launch.py\n'}
+[1.493222] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//launch/display.rviz\n'}
+[1.501210] (-) TimerEvent: {}
+[1.503545] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/base_fixed_part.skp\n'}
+[1.514608] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/base_fixed_part.stl\n'}
+[1.525629] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/mounting_plate.skp\n'}
+[1.535627] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/mounting_plate.stl\n'}
+[1.544853] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_fixed_part.skp\n'}
+[1.554720] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_fixed_part.stl\n'}
+[1.564528] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_revolute_part.skp\n'}
+[1.574454] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_revolute_part.stl\n'}
+[1.584267] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_fixed_part.skp\n'}
+[1.594142] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_fixed_part.stl\n'}
+[1.601304] (-) TimerEvent: {}
+[1.604025] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_revolute_part.skp\n'}
+[1.613590] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_revolute_part.stl\n'}
+[1.623366] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_actuator.skp\n'}
+[1.633165] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_actuator.stl\n'}
+[1.643201] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_a.skp\n'}
+[1.653060] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_a.stl\n'}
+[1.662948] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_b.skp\n'}
+[1.672651] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_b.stl\n'}
+[1.682817] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wrist.skp\n'}
+[1.692648] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/collision/wrist.stl\n'}
+[1.701373] (-) TimerEvent: {}
+[1.702362] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/base_fixed_part.stl\n'}
+[1.712155] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/base_revolute_part.stl\n'}
+[1.722201] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/joint_cover.stl\n'}
+[1.736108] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/mounting_plate.stl\n'}
+[1.746455] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_1_fixed_part.stl\n'}
+[1.756371] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_1_revolute_part.stl\n'}
+[1.766245] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_2_fixed_part.stl\n'}
+[1.776170] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_2_revolute_part.stl\n'}
+[1.785172] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rtcorp_logo_name.stl\n'}
+[1.795161] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/rtcorp_logo_rabbit.stl\n'}
+[1.801446] (-) TimerEvent: {}
+[1.805233] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_actuator.stl\n'}
+[1.815336] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_finger_a.stl\n'}
+[1.825354] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_finger_b.stl\n'}
+[1.834350] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//meshes/visual/wrist.stl\n'}
+[1.844518] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.gazebo.xacro\n'}
+[1.853838] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.gazebo_ros2_control.xacro\n'}
+[1.863645] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.ros2_control.xacro\n'}
+[1.873471] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.urdf.xacro\n'}
+[1.883452] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.xacro\n'}
+[1.893275] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_arm.xacro\n'}
+[1.901525] (-) TimerEvent: {}
+[1.902927] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_mounting_plate.xacro\n'}
+[1.912618] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_rt_logos.xacro\n'}
+[1.922460] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_wide_two_finger_gripper.xacro\n'}
+[1.932524] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/pythonpath.sh\n'}
+[1.942439] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/pythonpath.dsv\n'}
+[1.952665] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/__init__.py\n'}
+[1.962646] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/robot_description_loader.py\n'}
+[1.972833] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/lib/crane_x7_description/robot_description_loader.py\n'}
+[1.982863] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/ament_index/resource_index/package_run_dependencies/crane_x7_description\n'}
+[1.992987] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/ament_index/resource_index/parent_prefix_path/crane_x7_description\n'}
+[2.001615] (-) TimerEvent: {}
+[2.002744] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/ament_prefix_path.sh\n'}
+[2.014276] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/ament_prefix_path.dsv\n'}
+[2.024224] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/path.sh\n'}
+[2.033948] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/environment/path.dsv\n'}
+[2.042878] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/local_setup.bash\n'}
+[2.052791] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/local_setup.sh\n'}
+[2.062842] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/local_setup.zsh\n'}
+[2.072662] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/local_setup.dsv\n'}
+[2.082865] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/package.dsv\n'}
+[2.092798] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/ament_index/resource_index/packages/crane_x7_description\n'}
+[2.101709] (-) TimerEvent: {}
+[2.102823] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/cmake/crane_x7_descriptionConfig.cmake\n'}
+[2.112718] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/cmake/crane_x7_descriptionConfig-version.cmake\n'}
+[2.122673] (crane_x7_description) StdoutLine: {'line': b'-- Symlinking: /workspace/ros2_ws/install/crane_x7_description/share/crane_x7_description/package.xml\n'}
+[2.160600] (crane_x7_description) StdoutLine: {'line': b"Listing '/workspace/ros2_ws/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description'...\n"}
+[2.160682] (crane_x7_description) StdoutLine: {'line': b"Compiling '/workspace/ros2_ws/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/__init__.py'...\n"}
+[2.160751] (crane_x7_description) StdoutLine: {'line': b"Compiling '/workspace/ros2_ws/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/robot_description_loader.py'...\n"}
+[2.166485] (crane_x7_description) CommandEnded: {'returncode': 0}
+[2.184986] (crane_x7_description) JobEnded: {'identifier': 'crane_x7_description', 'rc': 0}
+[2.185359] (-) EventReactorShutdown: {}

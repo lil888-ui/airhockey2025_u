@@ -85,6 +85,8 @@ WORKDIR /workspace
 RUN git clone https://github.com/rt-net/crane_x7_description.git && \
     cd crane_x7_description && git lfs pull
 
+RUN mkdir -p /workspace/ros2_ws/src/airhockey2025/
+
 RUN mkdir -p /workspace/ros2_ws/src && \
     mv /workspace/crane_x7_description /workspace/ros2_ws/src/
 
