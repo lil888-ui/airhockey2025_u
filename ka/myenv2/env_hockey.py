@@ -90,10 +90,10 @@ class AirHockeyEnv(MujocoEnv):
         # ログ出力（50ステップごとまたは終了時）
         if self.global_step % 50 == 0 or done:
             outcome = info.get('outcome', 'ongoing')
-            print(
-                f"Global {self.global_step}/{self.total_timesteps} | Episode Step {self.step_cnt}/{self.step_cnt_threshold}: "
-                f"reward={reward:.3f}, outcome={outcome}, dist_to_puck={info.get('dist_to_puck', 0.0):.3f}"
-            )
+            #print(
+            #    f"Global {self.global_step}/{self.total_timesteps} | Episode Step {self.step_cnt}/{self.step_cnt_threshold}: "
+            #    f"reward={reward:.3f}, outcome={outcome}, dist_to_puck={info.get('dist_to_puck', 0.0):.3f}"
+            #)
 
         return obs, reward, done, truncated, info
 
