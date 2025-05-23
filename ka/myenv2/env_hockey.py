@@ -19,7 +19,7 @@ class AirHockeyEnv(MujocoEnv):
         xml_path: str = "/workspace/ros2_ws/src/airhockey2025/ka/assets/main.xml",
         frame_skip: int = 5,
         default_camera_config: dict = DEFAULT_CAMERA_CONFIG,
-        step_cnt_threshold: int = 200,
+        step_cnt_threshold: int = 1000,
         total_timesteps: int = 500000,
         **kwargs,
     ):
@@ -56,7 +56,7 @@ class AirHockeyEnv(MujocoEnv):
         self.global_step = 0
 
         # ゲーム設定
-        self.speed = 1.5
+        self.speed = 3.0
         self.min_speed = 0.01
         self.x_limit = 1.1
         self.y_limit = 0.6
