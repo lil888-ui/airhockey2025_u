@@ -10,17 +10,12 @@ DEFAULT_CAMERA_CONFIG = {
 }
 
 class AirHockeyEnv(MujocoEnv):
-    # サポートするレンダーモード
-    render_modes = ["rgb_array"]
-    metadata = {"render_modes": render_modes}
-
     def __init__(
         self,
         xml_path: str = "/workspace/ros2_ws/src/airhockey2025/ka/assets/main.xml",
         frame_skip: int = 5,
         default_camera_config: dict = DEFAULT_CAMERA_CONFIG,
         step_cnt_threshold: int = 200,
-        total_timesteps: int = 500000,
         **kwargs,
     ):
         # モデル読み込み＆観測次元取得
@@ -30,7 +25,7 @@ class AirHockeyEnv(MujocoEnv):
             low=-np.inf, high=np.inf, shape=(obs_dim,), dtype=np.float64
         )
 
-        # 親クラス初期化 (render_mode はサポートリストから選択)
+        # 親クラス初期化
         super().__init__(
             model_path=xml_path,
             frame_skip=frame_skip,
@@ -48,12 +43,10 @@ class AirHockeyEnv(MujocoEnv):
             dtype=np.float32,
         )
 
-        # エピソード切り替え上限と全体ステップ数
+        # エピソード切り替え上限
         self.step_cnt_threshold = step_cnt_threshold
-        self.total_timesteps = total_timesteps
         # カウンター初期化
         self.step_cnt = 0
-        self.global_step = 0
 
         # ゲーム設定
         self.speed = 1.5
@@ -75,25 +68,17 @@ class AirHockeyEnv(MujocoEnv):
         self.paddle_site = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE, "paddle_site")
 
     def step(self, action):
-        # 全体ステップ数更新
-        self.global_step += 1
-        # エピソード内ステップ数更新
         self.step_cnt += 1
-
-        # アクション適用
         scaled = action * self.model.actuator_ctrlrange[:,1]
         self.do_simulation(scaled, self.frame_skip)
         obs = self._get_obs()
         reward, done, info = self._compute_reward_and_done()
         truncated = self.step_cnt >= self.step_cnt_threshold
 
-        # ログ出力（50ステップごとまたは終了時）
-        if self.global_step % 50 == 0 or done:
+        # ログ出力（50ステップごと）
+        if self.step_cnt % 50 == 0 or done:
             outcome = info.get('outcome', 'ongoing')
-            print(
-                f"Global {self.global_step}/{self.total_timesteps} | Episode Step {self.step_cnt}/{self.step_cnt_threshold}: "
-                f"reward={reward:.3f}, outcome={outcome}, dist_to_puck={info.get('dist_to_puck', 0.0):.3f}"
-            )
+            #print(f"Step {self.step_cnt}: reward={reward:.3f}, outcome={outcome}, dist_to_puck={info.get('dist_to_puck', 0.0):.3f}")
 
         return obs, reward, done, truncated, info
 
@@ -166,7 +151,6 @@ class AirHockeyEnv(MujocoEnv):
         return reward, done, info
 
     def reset_model(self):
-        # リセット時にカウンター初期化
         self.step_cnt = 0
         self.has_hit = False
 
