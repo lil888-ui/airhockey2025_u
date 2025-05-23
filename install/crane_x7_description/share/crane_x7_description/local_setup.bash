@@ -1,0 +1,1 @@
+/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description/ament_cmake_environment_hooks/local_setup.bash

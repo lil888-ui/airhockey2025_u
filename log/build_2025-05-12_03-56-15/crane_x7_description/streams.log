@@ -1,0 +1,103 @@
+[0.224s] Invoking command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /workspace/ros2_ws/src/airhockey2025/ka/ros2_ws/src/crane_x7_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/src/airhockey2025/install/crane_x7_description
+[0.292s] -- The C compiler identification is GNU 9.4.0
+[0.349s] -- The CXX compiler identification is GNU 9.4.0
+[0.354s] -- Check for working C compiler: /usr/bin/cc
+[0.438s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.439s] -- Detecting C compiler ABI info
+[0.521s] -- Detecting C compiler ABI info - done
+[0.533s] -- Detecting C compile features
+[0.533s] -- Detecting C compile features - done
+[0.537s] -- Check for working CXX compiler: /usr/bin/c++
+[0.631s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.632s] -- Detecting CXX compiler ABI info
+[0.732s] -- Detecting CXX compiler ABI info - done
+[0.744s] -- Detecting CXX compile features
+[0.744s] -- Detecting CXX compile features - done
+[0.748s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.773s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[0.773s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.944s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.006s] -- Found ament_lint_auto: 0.9.8 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[1.659s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.673s] -- Added test 'lint_cmake' to check CMake code style
+[1.681s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[1.744s] -- Added test 'xmllint' to check XML markup files
+[1.747s] -- Configuring done
+[1.751s] -- Generating done
+[1.754s] -- Build files have been written to: /workspace/ros2_ws/src/airhockey2025/build/crane_x7_description
+[1.762s] Invoked command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake /workspace/ros2_ws/src/airhockey2025/ka/ros2_ws/src/crane_x7_description -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/workspace/ros2_ws/src/airhockey2025/install/crane_x7_description
+[1.763s] Invoking command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspace/ros2_ws/src/airhockey2025/build/crane_x7_description -- -j64 -l64
+[1.812s] Invoked command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --build /workspace/ros2_ws/src/airhockey2025/build/crane_x7_description -- -j64 -l64
+[1.827s] Invoking command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspace/ros2_ws/src/airhockey2025/build/crane_x7_description
+[1.840s] -- Install configuration: ""
+[1.841s] -- Execute custom install script
+[1.841s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//config/dummy_controllers.yaml
+[1.853s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//launch/display.launch.py
+[1.865s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//launch/display.rviz
+[1.875s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/base_fixed_part.skp
+[1.885s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/base_fixed_part.stl
+[1.895s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/mounting_plate.skp
+[1.905s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/mounting_plate.stl
+[1.915s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_fixed_part.skp
+[1.925s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_fixed_part.stl
+[1.935s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_revolute_part.skp
+[1.945s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_1_revolute_part.stl
+[1.954s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_fixed_part.skp
+[1.966s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_fixed_part.stl
+[1.975s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_revolute_part.skp
+[1.985s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/rotating_link_type_2_revolute_part.stl
+[1.994s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_actuator.skp
+[2.003s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_actuator.stl
+[2.011s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_a.skp
+[2.021s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_a.stl
+[2.031s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_b.skp
+[2.041s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wide_two_finger_gripper_finger_b.stl
+[2.052s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wrist.skp
+[2.061s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/collision/wrist.stl
+[2.072s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/base_fixed_part.stl
+[2.081s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/base_revolute_part.stl
+[2.091s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/joint_cover.stl
+[2.100s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/mounting_plate.stl
+[2.110s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_1_fixed_part.stl
+[2.119s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_1_revolute_part.stl
+[2.129s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_2_fixed_part.stl
+[2.138s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rotating_link_type_2_revolute_part.stl
+[2.148s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rtcorp_logo_name.stl
+[2.157s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/rtcorp_logo_rabbit.stl
+[2.166s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_actuator.stl
+[2.175s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_finger_a.stl
+[2.184s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/wide_two_finger_gripper_finger_b.stl
+[2.196s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//meshes/visual/wrist.stl
+[2.206s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.gazebo.xacro
+[2.215s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.gazebo_ros2_control.xacro
+[2.224s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.ros2_control.xacro
+[2.235s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.urdf.xacro
+[2.245s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7.xacro
+[2.255s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_arm.xacro
+[2.264s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_mounting_plate.xacro
+[2.275s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_rt_logos.xacro
+[2.285s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description//urdf/crane_x7_wide_two_finger_gripper.xacro
+[2.295s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/pythonpath.sh
+[2.305s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/pythonpath.dsv
+[2.317s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/__init__.py
+[2.327s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/robot_description_loader.py
+[2.337s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/crane_x7_description/robot_description_loader.py
+[2.347s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/ament_index/resource_index/package_run_dependencies/crane_x7_description
+[2.356s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/ament_index/resource_index/parent_prefix_path/crane_x7_description
+[2.365s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/ament_prefix_path.sh
+[2.375s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/ament_prefix_path.dsv
+[2.385s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/path.sh
+[2.394s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/environment/path.dsv
+[2.404s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/local_setup.bash
+[2.415s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/local_setup.sh
+[2.425s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/local_setup.zsh
+[2.435s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/local_setup.dsv
+[2.445s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/package.dsv
+[2.455s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/ament_index/resource_index/packages/crane_x7_description
+[2.465s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/cmake/crane_x7_descriptionConfig.cmake
+[2.475s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/cmake/crane_x7_descriptionConfig-version.cmake
+[2.485s] -- Symlinking: /workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/share/crane_x7_description/package.xml
+[2.524s] Listing '/workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description'...
+[2.524s] Compiling '/workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/__init__.py'...
+[2.524s] Compiling '/workspace/ros2_ws/src/airhockey2025/install/crane_x7_description/lib/python3.8/site-packages/crane_x7_description/robot_description_loader.py'...
+[2.531s] Invoked command in '/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/foxy /usr/bin/cmake --install /workspace/ros2_ws/src/airhockey2025/build/crane_x7_description
