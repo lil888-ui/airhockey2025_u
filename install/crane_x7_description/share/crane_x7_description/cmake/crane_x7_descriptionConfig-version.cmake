@@ -1,1 +1,0 @@
-/workspace/ros2_ws/src/airhockey2025/build/crane_x7_description/ament_cmake_core/crane_x7_descriptionConfig-version.cmake
