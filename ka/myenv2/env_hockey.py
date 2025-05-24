@@ -30,7 +30,7 @@ class AirHockeyEnv(MujocoEnv):
             low=-np.inf, high=np.inf, shape=(obs_dim,), dtype=np.float64
         )
 
-        # 親クラス初期化 (render_mode はサポートリストから選択)
+        # 親クラス初期化
         super().__init__(
             model_path=xml_path,
             frame_skip=frame_skip,
@@ -67,6 +67,9 @@ class AirHockeyEnv(MujocoEnv):
         self.prox_limit = 0.5
         self.prox_coeff = 0.5
         self.table_height_thresh = 0.1
+        # 新規報酬係数
+        self.inner_coeff = 0.2
+        self.orientation_coeff = 0.1
 
         # ジオメトリ&サイトIDキャッシュ
         self.puck_geom = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "puck")
@@ -86,14 +89,6 @@ class AirHockeyEnv(MujocoEnv):
         obs = self._get_obs()
         reward, done, info = self._compute_reward_and_done()
         truncated = self.step_cnt >= self.step_cnt_threshold
-
-        # ログ出力（50ステップごとまたは終了時）
-        if self.global_step % 50 == 0 or done:
-            outcome = info.get('outcome', 'ongoing')
-            #print(
-            #    f"Global {self.global_step}/{self.total_timesteps} | Episode Step {self.step_cnt}/{self.step_cnt_threshold}: "
-            #    f"reward={reward:.3f}, outcome={outcome}, dist_to_puck={info.get('dist_to_puck', 0.0):.3f}"
-            #)
 
         return obs, reward, done, truncated, info
 
@@ -133,6 +128,19 @@ class AirHockeyEnv(MujocoEnv):
         # アーム高さ報酬
         if paddle_pos[2] < self.table_height_thresh:
             reward += 0.1
+
+        # 新規: パドルがテーブル内側にある報酬
+        if abs(paddle_pos[0]) < self.x_limit and abs(paddle_pos[1]) < self.y_limit:
+            reward += self.inner_coeff
+
+        # 新規: マレット水平報酬
+        xmat = self.data.site_xmat[self.paddle_site]
+        # xmat は長さ9の行優先フラット配列: [R11,R12,R13, R21,R22,R23, R31,R32,R33]
+        R31 = xmat[6]
+        R32 = xmat[7]
+        R33 = xmat[8]
+        vertical_alignment = abs(R33)
+        reward += self.orientation_coeff * vertical_alignment
 
         # 自陣からの場外
         if px < -self.x_limit:
