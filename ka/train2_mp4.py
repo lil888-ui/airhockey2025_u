@@ -62,7 +62,7 @@ def train(model_path=None, train=True):
 
     # 学習実行
     if train:
-        model.learn(total_timesteps=800000, callback=checkpoint_callback)
+        model.learn(total_timesteps=2000000, callback=checkpoint_callback)
         model.save("./models/sac_airhockey2_final")
 
     # 単一環境での評価＋フレーム収集

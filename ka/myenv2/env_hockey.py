@@ -54,33 +54,34 @@ class AirHockeyEnv(MujocoEnv):
         self.step_cnt = 0
         self.global_step = 0
 
-        # ゲーム設定
+        # --- 報酬・ペナルティ値を調整 ---
         self.speed = 3.0
         self.min_speed = 0.01
         self.x_limit = 1.1
         self.y_limit = 0.6
-        self.hit_reward = 1.0
-        self.lose_penalty = -5.0
-        self.win_reward = 5.0
-        self.collision_penalty = -3.0
+        self.hit_reward = 2.0
+        self.lose_penalty = -10.0
+        self.win_reward = 10.0
+        self.collision_penalty = -5.0
         self.prox_limit = 0.5
-        self.prox_coeff = 0.5
+        self.prox_coeff = 1.0
         self.table_height_thresh = 0.1
-        # 新規報酬係数
-        self.inner_coeff = 0.2
-        self.orientation_coeff = 0.1
-        # 閾値超過時のみのジョイント角度ペナルティ設定
-        self.angle_penalty_coeff = 0.05
-        # 130度をラジアンに変換
+        self.inner_coeff = 0.3
+        self.orientation_coeff = 0.2
+        # パック距離ペナルティ係数 (新規)
+        self.distance_penalty_coeff = 0.01
+        
+        # 閾値超過時のみジョイント角度ペナルティ設定
+        self.angle_penalty_coeff = 0.1
         thresh_rad = math.radians(130)
-        # 対象ジョイントのID取得
-        self.jid_pan = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, "crane_x7_shoulder_fixed_part_pan_joint")
-        self.jid_lower = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, "crane_x7_lower_arm_fixed_part_joint")
-        # 各ジョイントのqpos インデックス取得
+        self.jid_pan = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT,
+                                         "crane_x7_shoulder_fixed_part_pan_joint")
+        self.jid_lower = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT,
+                                           "crane_x7_lower_arm_fixed_part_joint")
         self.addr_pan = self.model.jnt_qposadr[self.jid_pan]
         self.addr_lower = self.model.jnt_qposadr[self.jid_lower]
-        # 閾値を保存
         self.angle_thresh = thresh_rad
+        # ----------------------------------------
 
         # ジオメトリ&サイトIDキャッシュ
         self.puck_geom = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "puck")
@@ -133,29 +134,30 @@ class AirHockeyEnv(MujocoEnv):
         if dist_to_puck < self.prox_limit:
             reward += self.prox_coeff * (1 - dist_to_puck / self.prox_limit)
 
+        # パック距離ペナルティ (新規): 遠いほど少しずつマイナス
+        reward -= self.distance_penalty_coeff * dist_to_puck
+        info['distance_penalty'] = self.distance_penalty_coeff * dist_to_puck
+
         # アーム高さ報酬
         if paddle_pos[2] < self.table_height_thresh:
             reward += 0.1
 
-        # 新規: パドルがテーブル内側にある報酬
+        # テーブル内側報酬
         if abs(paddle_pos[0]) < self.x_limit and abs(paddle_pos[1]) < self.y_limit:
             reward += self.inner_coeff
 
-        # 新規: マレット水平報酬
+        # マレット水平・垂直姿勢報酬
         xmat = self.data.site_xmat[self.paddle_site]
-        R31 = xmat[6]
-        R32 = xmat[7]
-        R33 = xmat[8]
+        R31, R32, R33 = xmat[6], xmat[7], xmat[8]
         vertical_alignment = abs(R33)
-        reward += self.orientation_coeff * vertical_alignment
-        # 水平維持報酬: R31,R32 小さいほど水平
         horizontal_offset = math.sqrt(R31**2 + R32**2)
         horizontal_alignment = max(0.0, 1.0 - horizontal_offset)
+        reward += self.orientation_coeff * vertical_alignment
         reward += self.orientation_coeff * horizontal_alignment
         info['vertical_alignment'] = vertical_alignment
         info['horizontal_alignment'] = horizontal_alignment
 
-        # 新規: 閾値超過時のみジョイント角度ペナルティ（指定ジョイントのみ）
+        # ジョイント角度ペナルティ (指定ジョイントのみ)
         angle_pan = self.data.qpos[self.addr_pan]
         over_pan = max(0.0, abs(angle_pan) - self.angle_thresh)
         angle_lower = self.data.qpos[self.addr_lower]
@@ -164,7 +166,7 @@ class AirHockeyEnv(MujocoEnv):
         reward -= angle_penalty
         info['angle_penalty'] = angle_penalty
 
-        # 自陣からの場外
+        # 自陣/out
         if px < -self.x_limit:
             reward += self.lose_penalty
             done = True
