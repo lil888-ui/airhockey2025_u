@@ -69,8 +69,18 @@ class AirHockeyEnv(MujocoEnv):
         # 新規報酬係数
         self.inner_coeff = 0.2
         self.orientation_coeff = 0.1
-        # ジョイント角度ペナルティ
+        # 閾値超過時のみのジョイント角度ペナルティ設定
         self.angle_penalty_coeff = 0.05
+        # 130度をラジアンに変換
+        thresh_rad = math.radians(130)
+        # 対象ジョイントのID取得
+        self.jid_pan = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, "crane_x7_shoulder_fixed_part_pan_joint")
+        self.jid_lower = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_JOINT, "crane_x7_lower_arm_fixed_part_joint")
+        # 各ジョイントのqpos インデックス取得
+        self.addr_pan = self.model.jnt_qposadr[self.jid_pan]
+        self.addr_lower = self.model.jnt_qposadr[self.jid_lower]
+        # 閾値を保存
+        self.angle_thresh = thresh_rad
 
         # ジオメトリ&サイトIDキャッシュ
         self.puck_geom = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "puck")
@@ -133,17 +143,24 @@ class AirHockeyEnv(MujocoEnv):
 
         # 新規: マレット水平報酬
         xmat = self.data.site_xmat[self.paddle_site]
-        # xmat は長さ9の行優先フラット配列: [R11,R12,R13, R21,R22,R23, R31,R32,R33]
         R31 = xmat[6]
         R32 = xmat[7]
         R33 = xmat[8]
         vertical_alignment = abs(R33)
         reward += self.orientation_coeff * vertical_alignment
+        # 水平維持報酬: R31,R32 小さいほど水平
+        horizontal_offset = math.sqrt(R31**2 + R32**2)
+        horizontal_alignment = max(0.0, 1.0 - horizontal_offset)
+        reward += self.orientation_coeff * horizontal_alignment
         info['vertical_alignment'] = vertical_alignment
+        info['horizontal_alignment'] = horizontal_alignment
 
-        # 新規: ジョイント角度ペナルティ
-        joint_angles = self.data.qpos[3:]
-        angle_penalty = self.angle_penalty_coeff * np.sum(np.square(joint_angles))
+        # 新規: 閾値超過時のみジョイント角度ペナルティ（指定ジョイントのみ）
+        angle_pan = self.data.qpos[self.addr_pan]
+        over_pan = max(0.0, abs(angle_pan) - self.angle_thresh)
+        angle_lower = self.data.qpos[self.addr_lower]
+        over_lower = max(0.0, abs(angle_lower) - self.angle_thresh)
+        angle_penalty = self.angle_penalty_coeff * (over_pan**2 + over_lower**2)
         reward -= angle_penalty
         info['angle_penalty'] = angle_penalty
 
