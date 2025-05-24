@@ -51,7 +51,6 @@ class AirHockeyEnv(MujocoEnv):
         # エピソード切り替え上限と全体ステップ数
         self.step_cnt_threshold = step_cnt_threshold
         self.total_timesteps = total_timesteps
-        # カウンター初期化
         self.step_cnt = 0
         self.global_step = 0
 
@@ -70,6 +69,8 @@ class AirHockeyEnv(MujocoEnv):
         # 新規報酬係数
         self.inner_coeff = 0.2
         self.orientation_coeff = 0.1
+        # ジョイント角度ペナルティ
+        self.angle_penalty_coeff = 0.05
 
         # ジオメトリ&サイトIDキャッシュ
         self.puck_geom = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_GEOM, "puck")
@@ -78,12 +79,9 @@ class AirHockeyEnv(MujocoEnv):
         self.paddle_site = mujoco.mj_name2id(self.model, mujoco.mjtObj.mjOBJ_SITE, "paddle_site")
 
     def step(self, action):
-        # 全体ステップ数更新
         self.global_step += 1
-        # エピソード内ステップ数更新
         self.step_cnt += 1
 
-        # アクション適用
         scaled = action * self.model.actuator_ctrlrange[:,1]
         self.do_simulation(scaled, self.frame_skip)
         obs = self._get_obs()
@@ -141,13 +139,19 @@ class AirHockeyEnv(MujocoEnv):
         R33 = xmat[8]
         vertical_alignment = abs(R33)
         reward += self.orientation_coeff * vertical_alignment
+        info['vertical_alignment'] = vertical_alignment
+
+        # 新規: ジョイント角度ペナルティ
+        joint_angles = self.data.qpos[3:]
+        angle_penalty = self.angle_penalty_coeff * np.sum(np.square(joint_angles))
+        reward -= angle_penalty
+        info['angle_penalty'] = angle_penalty
 
         # 自陣からの場外
         if px < -self.x_limit:
             reward += self.lose_penalty
             done = True
             info['outcome'] = 'lose'
-        # 相手陣から場外
         elif px > self.x_limit:
             if getattr(self, 'has_hit', False):
                 reward += self.win_reward
@@ -156,6 +160,7 @@ class AirHockeyEnv(MujocoEnv):
                 reward += self.lose_penalty
                 info['outcome'] = 'no_hit_opp'
             done = True
+
         # サイドアウト
         if abs(py) > self.y_limit:
             done = True
@@ -174,16 +179,13 @@ class AirHockeyEnv(MujocoEnv):
         return reward, done, info
 
     def reset_model(self):
-        # リセット時にカウンター初期化
         self.step_cnt = 0
         self.has_hit = False
 
-        # ロボット初期状態ランダム化
         qpos = self.init_qpos + np.random.uniform(-0.1, 0.1, self.model.nq)
         qvel = self.init_qvel + np.random.uniform(-0.1, 0.1, self.model.nv)
         self.set_state(qpos, qvel)
 
-        # パック初期位置・速度設定
         x0 = np.random.uniform(-self.x_limit, 0)
         y0 = np.random.uniform(-self.y_limit, self.y_limit)
         theta = np.random.uniform(-math.pi/4, math.pi/4)
